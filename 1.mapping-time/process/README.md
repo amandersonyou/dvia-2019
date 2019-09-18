@@ -14,6 +14,9 @@ the seconds. The clock is in miliary time, so there is no need to otherwise
 differentiate between AM and PM. The "key" is the colors I percieve for each 
 number (0-9). This means that the clock is like a secret code, and useless to 
 anyone else. 
+Note: concept changed after getting into the coding and finding out what I could
+accomplish at this stage.
+
 
 
 ### Concept 2: Cat Eye Clock
@@ -36,4 +39,6 @@ medium size circle appears to "drop" onto the middle bar representing a minute.
 Eventually, when 59 minutes have passed, a larger circle "drops" onto the hour 
 bar. You would be able to tell the time by counting the hour circles (up to 24),
 the minute circles, and the second circles. 
+Note: concept changed after getting into the coding and finding out what I could
+accomplish at this stage.
 
