@@ -54,6 +54,10 @@ The moon will be a sphere and will have a gradient spanning a soft yellow-white
 to black that changes with now.progress moon using colorForProgress(). The stars 
 themselves rotate at the pace of now.progress season.  This concept uses value 
 through the gradient of the moon and orientation of the stars to communicate time.
+Note, in github, the gradient moon in the pdf is appearing pink, so I've added a 
+screenshot image of the moon concept here as well.
+
+![Moon](MoonGradient.png "screenshot")
 
 
 ### Concept 5: Rainy Day Clock
