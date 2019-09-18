@@ -6,12 +6,13 @@ For code details and comments, please review each project varient's sketch.js fi
 Below are screenshots of each finished concept.
 
 1. Cat Eye Clock:
-![Cat Eye](/images/cateye.png "screenshot")
+![Cat Eye](images/cateye.png "screenshot")
 
 
 2. Line Growth Clock:
-![Line Growth](/images/linegrowth.png "screenshot")
+![Line Growth](images/linegrowth.png "screenshot")
 
 
 3. Shapes Clock:
-![Shapes](/images/shapesclock.png "screenshot")
+![Shapes](images/shapesclock.png "screenshot")
+
