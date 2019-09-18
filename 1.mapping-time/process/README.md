@@ -1,7 +1,10 @@
 ## Process
 
-I have made 3 sketches of how to map time using components learned from the 
-Bertin Retinal Variables excercise.
+I have made 6 sketches of how to map time using components learned from the 
+Bertin Retinal Variables excercise. The first three concepts focus on shorter 
+term time, such as seconds/minutes/hours. The second set of three concepts 
+focuses on longer term time such as months/moons/seasons/years.
+
 
 ### Concept 1: Synesthete's Clock
 I am a person who experiences grapheme synesthesia, which essentially means I 
@@ -16,7 +19,6 @@ number (0-9). This means that the clock is like a secret code, and useless to
 anyone else. 
 Note: concept changed after getting into the coding and finding out what I could
 accomplish at this stage.
-
 
 
 ### Concept 2: Cat Eye Clock
@@ -42,3 +44,32 @@ the minute circles, and the second circles.
 Note: concept changed after getting into the coding and finding out what I could
 accomplish at this stage.
 
+--------------------------------------------------------------------------------
+
+### Part Two of Assignment: Long Term Time
+
+
+### Concept 4: Outer Space Clock
+The moon will be a sphere and will have a gradient spanning a soft yellow-white
+to black that changes with now.progress moon using colorForProgress(). The stars 
+themselves rotate at the pace of now.progress season.  This concept uses value 
+through the gradient of the moon and orientation of the stars to communicate time.
+
+
+### Concept 5: Rainy Day Clock
+The raindrops will be moving from the top of the canvas to the bottom for each 
+hour, day, and month. The larger the rain drop, the longer the timespan it 
+contains (ex. largest drop will be the month).  The puddle at the bottom will 
+grow wider with as the year progresses. Each season, the background color will 
+change, from Orange to White, to Blue, to Green. This concept uses size and 
+color hue to communicate time.
+
+
+### Concept 6: Ice Cream Clock
+I really want to try out the rotating cone tool that is part of p5 references. 
+The starting point of the clock will have the icecreams as shown below, but with 
+the change in season, the cones will begin to rotate and the ice cream balls 
+will “fall off” and behave differently according to the time variable they are 
+tied to.  this concept will use position of the ice cream balls to communicate 
+time (ex. months will move vertically and moons will move horizontally), as well 
+as orientation of the rotating cone.
