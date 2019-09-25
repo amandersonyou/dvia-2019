@@ -66,7 +66,7 @@ hour, day, and month. The larger the rain drop, the longer the timespan it
 contains (ex. largest drop will be the month).  The puddle at the bottom will 
 grow wider with as the year progresses. Each season, the background color will 
 change, from Orange to White, to Blue, to Green. This concept uses size and 
-color hue to communicate time.
+color hue to communicate time. Note: this concept updated to falling snow!
 
 
 ### Concept 6: Ice Cream Clock
@@ -76,4 +76,5 @@ the change in season, the cones will begin to rotate and the ice cream balls
 will “fall off” and behave differently according to the time variable they are 
 tied to.  this concept will use position of the ice cream balls to communicate 
 time (ex. months will move vertically and moons will move horizontally), as well 
-as orientation of the rotating cone.
+as orientation of the rotating cone. Note: this concept updated to the stalactite
+clock.

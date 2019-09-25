@@ -20,7 +20,7 @@ function setup() {
 // Use now = clock() to create variables that will change with the time
 function draw() {
   var now = clock();
-    hourWidth = width * now.progress.hour;
+    hourWidth = width * .5 * now.progress.hour;
     secsWidth = width * now.progress.sec;
   var color = colorForProgress(now.progress.min);
   background(color);

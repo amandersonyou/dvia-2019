@@ -16,3 +16,15 @@ Below are screenshots of each finished concept.
 3. Shapes Clock:
 ![Shapes](images/shapesclock.png "screenshot")
 
+
+4. Endless Winter Clock:
+![Winter](images/EndlessWinter.png "screenshot")
+
+
+5. Stalactite Clock:
+![Stalactite](images/StalactiteClock.png "screenshot")
+
+
+6. Space Clock:
+![Space](images/SpaceClock.png "screenshot")
+
