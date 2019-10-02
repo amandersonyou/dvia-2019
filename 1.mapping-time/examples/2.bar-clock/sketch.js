@@ -24,11 +24,11 @@ function draw() {
     var hourWidth = map(now.hour, 1,12, 0,maxWidth) // from hours (1-12) to pixels (0–maxWidth)
     var minsWidth = map(now.min,  0,60, 0,maxWidth)  // from mins (0–60) to pixels (0–maxWidth)
     var secsWidth = map(now.sec,  0,60, 0,maxWidth)  // from secs (0–60) to pixels (0–maxWidth)
-  }else{
-    // alternatively, we can use the clock's 'progress' percentages
-    hourWidth = maxWidth * now.progress.day
-    minsWidth = maxWidth * now.progress.hour
-    secsWidth = maxWidth * now.progress.min
+  // }else{
+  //   // alternatively, we can use the clock's 'progress' percentages
+  //   hourWidth = maxWidth * now.progress.day
+  //   minsWidth = maxWidth * now.progress.hour
+  //   secsWidth = maxWidth * now.progress.min
   }
 
   //draw 3 background bars to indicate the max width
