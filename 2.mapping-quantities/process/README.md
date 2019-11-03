@@ -23,3 +23,7 @@ A steamgraph that shows how the location type (shown in color) changed over time
 showing quantity of tests of those types with size of the section.This visual 
 helps to show the years in which overall tests were high, and then additionally, 
 what type of tests those were. I can also see when there were drop offs (1990s).
+
+
+UPDATE: this folder also contains many excel exploration sketches, as well as code 
+P5 exploration "sketches" as well, some of which are coded in the project folder.

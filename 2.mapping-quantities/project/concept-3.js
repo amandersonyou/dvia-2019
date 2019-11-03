@@ -18,7 +18,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(2000, 3500)
+  createCanvas(2000, 3500, SVG)
   background(0,148,153) // Viridian Green Pantone
 
   // create tables for each type of value to be used
@@ -30,7 +30,7 @@ function setup(){
 
 
   // set up typography
-  textFont("Prestige Elite")
+  textFont("Rokkitt")
   textSize(18)
   fill(30)
   noStroke()
@@ -50,7 +50,6 @@ y = 700
 textStyle(NORMAL)
 textAlign(BOLD)
 for (var r=0; r<table.getRowCount(); r++){
-    // if (r % 2 === 0)
     var year = table.getString(r, 0)
     text(year, x+colWidth*.2, y-rowHeight)
     x += colWidth
@@ -135,4 +134,5 @@ for (var r=0; r<table.getRowCount(); r++){
     x += colWidth
 }
 
+  save('FinalSketch.svg')
 }
