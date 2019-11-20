@@ -61,6 +61,7 @@ function addCircles(){
     var depthMin = 0.0;
     var depthMax = columnMax(table, "depth");
     console.log('depth range:', [depthMin, depthMax])
+    
 
     // step through the rows of the table and add a dot for each event
     for (var i=0; i<table.getRowCount(); i++){
@@ -82,7 +83,31 @@ function addCircles(){
         // place the new dot on the map
         circle.addTo(mymap);
     }
+
+
+//////////////// 
+    // step through the rows of the table and add a dot for each station
+    for (var i=0; i<table2.getRowCount(); i++){
+        var row = table2.getRow(i)
+
+        // // skip over any rows where the magnitude data is missing
+        // if (row.get('mag')==''){
+        //     continue
+        // }
+
+        // create a new dot
+        var circle = L.circle([row.getNum('Latitude'), row.getNum('Longitude')], {
+            color: 'black',      // the dot stroke color
+            fillColor: 'black', // the dot fill color
+            fillOpacity: 0.25,  // use some transparency so we can see overlaps
+            radius: 30000
+        })
+
+        // place the new dot on the map
+        circle.addTo(mymap);
+    }
 }
+
 
 // removes any circles that have been added to the map
 function removeAllCircles(){
@@ -115,4 +140,47 @@ function columnMin(tableObject, columnName){
 
     // find the largest value in the column
     return _.min(colValues);
+}
+
+
+//////// Create bars for depthError and dmin inside the magnitude circle
+
+function addBars(){
+    // calculate minimum and maximum values for depthError and dmin
+    // add dmin
+    var dminMin = 0.0;
+    var dminMax = columnMax(table, "dmin");
+    console.log('dmin range:', [dminMin, dminMax])
+    
+    // add depth error
+    var depthErrMin = 0.0;
+    var depthErrMax = columnMax(table, "depthError");
+    console.log('depth error range:', [depthErrMin, depthErrMax])
+
+    // step through the rows of the table and add a bar for each event
+    for (var i=0; i<table.getRowCount(); i++){
+        var row = table.getRow(i)
+
+        // skip over any rows where the magnitude data is missing
+        if (row.get('mag')==''){
+            continue
+        }
+
+        // create a new bar
+        var bounds = [[row.getNum('latitude'), row.getNum('longitude')], [row.getNum('latitude'), (row.getNum('dmin')*111.2)]];
+        L.rectange(bounds, {color: "blue", weight: 1}).addTo(mymap);
+        map.fitBounds(bounds);
+
+    }
+
+
+
+// removes any errLines that have been added to the map
+function removeAllbars(){
+    mymap.eachLayer(function(layer){
+        if (layer instanceof L.rectange()){
+            mymap.removeLayer(layer)
+        }
+    })
+}
 }
