@@ -6,7 +6,8 @@ var mymap;
 
 function preload() {
     // load the CSV data into our `table` variable and clip out the header row
-    table = loadTable("../data/all_month.csv", "csv", "header");
+    table = loadTable("../data/all_day.csv", "csv", "header");
+    table2 = loadTable("../data/GNS_ANSSstations.csv", "csv", "header");
 }
 
 function setup() {
@@ -24,8 +25,9 @@ function setup() {
     noStroke()
     textSize(16)
     text(`Plotting ${table.getRowCount()} seismic events`, 20, 40)
-    text(`Largest Magnitude: ${columnMax(table, "mag")}`, 20, 60)
-    text(`Greatest Depth: ${columnMax(table, "depth")}`, 20, 80)
+    text(`Plotting ${table2.getRowCount()} monitoring stations`, 20, 60)
+    text(`Largest Magnitude: ${columnMax(table, "mag")}`, 20, 80)
+    text(`Greatest Depth: ${columnMax(table, "depth")}`, 20, 100)
 }
 
 function setupMap(){
