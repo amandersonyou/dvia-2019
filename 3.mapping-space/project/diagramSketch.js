@@ -28,7 +28,7 @@ function draw() {
   y = 300
   
   // magnitude circles
-  fill(220, 20, 60) // Crimson
+  fill(255, 79, 0, 250) // orange
   for (var m=0; m<table_daydata.getRowCount(); m++){
     var mag = (table_daydata.getNum(m, 4)*10)
     ellipse(x, y, mag)
@@ -39,8 +39,7 @@ function draw() {
   y = 300
     
   // depth rectangle aka line
-  // NEED HELP WITH STARTING LINE AT BOTTOM OF CIRCLE
-  fill(0,0,139) // dark blue
+  fill(72,61,139) // dark slate blue
   for (var d=0; d<table_daydata.getRowCount(); d++){
     var depth = table_daydata.getNum(d, 3)
     rect(x, y+(mag), 4, depth*1.5)
@@ -62,16 +61,14 @@ function draw() {
   y = 300
   // station distance
     // depth lines  NEED TO FIX NAN CONTINUE
-  fill(255,140,0) // dark orange
+  fill(186,85,211) // medium orchid
   for (var s=0; s<table_daydata.getRowCount(); s++){
     // var row = table_daydata.getRow(s)
     // if (row.get('dmin')==''){
     //   continue
     // }
-    var dmin = table_daydata.getNum(s, 5)
-    // console.log(dmin)
+    var dmin = table_daydata.getNum(s, 5) // 6 with the real sheet
     rect(x, y-(mag), 4, -dmin*10)
-    // stroke(10)
     x += symbolWidth
   };
   
