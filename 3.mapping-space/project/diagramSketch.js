@@ -39,7 +39,7 @@ function setup() {
 
 // draw shapes to represent the various data relating to the quakes and stations
 function draw() {
-  background(240,248,255) // Alice Blue
+  // background(240,248,255) // Alice Blue
   // noStroke()
   
   var table_daydata = daydata;
@@ -62,7 +62,6 @@ function draw() {
     ellipse(x, y, mag)
     
     
-    // strokeFill("red")
     x += symbolWidth
   };
   

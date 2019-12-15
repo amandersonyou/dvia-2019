@@ -25,10 +25,10 @@ function setup() {
     addCircles();
 
     // generate a p5 diagram that complements the map, communicating the earthquake data non-spatially
-    createCanvas(2750, 1100)
-    background(240,248,255)
+    createCanvas(1700, 1000)
+    background: "#f7f3ec"
     
-    daydata.rows= _.sortBy(daydata.rows, row => -row.getNum('stnDist'))
+    daydata.rows= _.sortBy(daydata.rows, row => -row.getNum('dmin'))
     // daydata.rows= _.sortBy(daydata.rows, row => -row.getNum('depthError'))
 
     
@@ -52,34 +52,33 @@ function draw() {
     
   var table_daydata = daydata;
   var table_station = station;
-  var symbolWidth = 65
+  var symbolWidth = 40
   
 
   // stroke(20)
   
-  x = 65
+  x = 45
   y = 450
   // magnitude circles
-  fill(255, 173, 51) // orange
+  fill("#ff4500")
   for (var m=0; m<table_daydata.getRowCount(); m++){
-    var mag = (table_daydata.getNum(m, 4)*10)
-    var magError = (table_daydata.getNum(m, 7)*10)
+    var mag = (table_daydata.getNum(m, 4)*5)
+    var magError = (table_daydata.getNum(m, 7)*5)
     strokeWeight(magError)
     // stroke(255, 230, 179)
-    stroke(255, 255, 179)
+    stroke("#671b00")
     ellipse(x, y, mag)
     
     
-    // strokeFill("red")
     x += symbolWidth
   };
   
   noStroke()
   
-  x = 65
+  x = 43
   y = 500
   // depth rectangle aka line
-  fill(72,61,139) // dark slate blue
+  fill("#134e13") 
   for (var d=0; d<table_daydata.getRowCount(); d++){
     var depth = table_daydata.getNum(d, 3)
     rect(x, y, 4, depth)
@@ -87,50 +86,47 @@ function draw() {
   };
 
 
-  x = 65
+  x = 43
   y = 500
   // depth error rectangle
-  fill(169, 213, 190, 70) // sea green
-//   46,139,87
-	
-	192,213,169
+  fill(	175, 207, 175, 70)
   for (var e=0; e<table_daydata.getRowCount(); e++){
     var d_err = table_daydata.getNum(e, 6) // 16 with the real sheet
     rect(x-7, y, 18, d_err*1.5)
     x += symbolWidth
   };
   
-  x = 60
+  x = 42.5
   y = 400
   /* dmin is defined as: horizontal distance from the epicenter to the nearest 
   station (in degrees). 1 degree is approximately 111.2 kilometers. In general, 
   the smaller this number, the more reliable is the calculated depth of the 
   earthquake.*/
-  fill(218, 179, 255) // lavendar
+  fill("#ffa500")
   for (var s=0; s<table_daydata.getRowCount(); s++){
     var dmin = table_daydata.getNum(s, 5) // 6 with the real sheet
-    rect(x, y, 4, -dmin*111.2/5)
+    rect(x, y, 4, -dmin*111.2/5) 
     x += symbolWidth
   };
   
-  
-  x = 70
-  y = 400
-  // station distance
-    // depth lines  NEED TO FIX NAN CONTINUE
-  fill(186,85,211) // medium orchid
-  for (var s=0; s<table_daydata.getRowCount(); s++){
-    var dmin = table_daydata.getNum(s, 8) // 
-    rect(x, y, 4, -dmin/5)
-    x += symbolWidth
-  };
+// No longer using the below as it is repeat information (that doesn't match) of the dmin
+//   x = 70
+//   y = 400
+//   // station distance using measureDistance function between lat/long of station
+//   // and lat/long of earthquake 
+//   fill(186,85,211) // medium orchid
+//   for (var s=0; s<table_daydata.getRowCount(); s++){
+//     var dmin = table_daydata.getNum(s, 8) // 
+//     rect(x, y, 4, -dmin/5)
+//     x += symbolWidth
+//   };
 
 }
 
 function setupMap(){
     
     // create your own map
-    mymap = L.map('quake-map').setView([35.505, -0.09], 4);
+    mymap = L.map('quake-map').setView([25.505, -100.29], 5);
 
     // load a set of map tiles – choose from the different providers demoed here:
     // https://leaflet-extras.github.io/leaflet-providers/preview/
@@ -159,15 +155,14 @@ function addCircles(){
 
         // create a new dot
         var circle = L.circle([row.getNum('latitude'), row.getNum('longitude')], {
-            color: '#FFFFB3',      // the dot stroke color
-            fillColor: '#FFAD33', // the dot fill color
+            color: '#ff4500',      // the dot stroke color
+            fillColor: '#ff581a', // the dot fill color
             fillOpacity: 0.65,  // use some transparency so we can see overlaps
-            radius: row.getNum('mag') * 40000
+            radius: row.getNum('mag') * 30000
         })
-
         // place the new dot on the map
         circle.addTo(mymap);
-        circle.bindPopup('Earthquake with a magnitude of: ' + row.getNum('mag'));
+        circle.bindPopup("I'm an earthquake with a magnitude of " + row.getNum('mag'));
     }
 
 
@@ -178,8 +173,8 @@ function addCircles(){
 
         // create a new dot
         var circle = L.circle([row.getNum('Latitude'), row.getNum('Longitude')], {
-            color: '#ba55d3',      // the dot stroke color
-            fillColor: '#ba55d3', // the dot fill color
+            color: '#ffa500',      // the dot stroke color
+            fillColor: '#ffa500', // the dot fill color
             fillOpacity: 0.65,  // use some transparency so we can see overlaps
             radius: 30000
         })

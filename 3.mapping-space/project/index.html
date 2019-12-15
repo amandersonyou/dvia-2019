@@ -5,19 +5,50 @@
   <style>
     html, body {
       padding: 0;
-      margin: 0;
+      background-color: #f7f3ec;
+      margin: 20px;
+      color: #0e3a0e;
+    }
+    .header {
+      /*color: #0d145e;*/
+      font-size: 50px;
+      width: 50%;
+    }
+    .description {
+      /*color: #0d145e;*/
+      font-size: 20px;
+      width: 60%;
     }
 
     /* default dimensions for the leaflet map */
     #quake-map{
-      width: 2750px;
+      width: 1700px;
       height: 800px;
+    }
+    
+    h3 {
+      font-size: 30px;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
+  <div class="header"> 
+    <h1>mapping earthquakes</h1>
+  </div>
+  <div class="description">
+    <h2>Explore the map below to see earthquakes that occured in the span of a day 
+    along with the seismic monitoring stations located around the world. The diagram 
+    below illustrates the magnitude, depth and depth error of the earthquake, and is 
+    ordered by its distance to the nearest seismic monitoring station.</h2>
+
+  </div>
   <!-- The container div for our leaflet map -->
   <div id="quake-map"></div>
+  <div>
+      <img src="legend.png" >
+  </div>
+  <h3>Earthquakes in a Day</h3>
 
   <!-- load our dependencies and sketch file -->
   <script src="../libraries/leaflet/leaflet.js"></script>
