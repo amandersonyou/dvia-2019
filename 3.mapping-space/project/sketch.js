@@ -32,20 +32,20 @@ function setup() {
     // daydata.rows= _.sortBy(daydata.rows, row => -row.getNum('depthError'))
 
     
-    // use measureDistance function to find distance from quake to its nearest station
-    // recorded these values into the daydata csv
-    var quake = daydata.getRow(40);
-    var quakeLat = quake.getNum('latitude')
-    var quakeLong = quake.getNum('longitude')
-    var closestStations = _.sortBy(station.rows, row => measureDistance(quakeLat, quakeLong, row.getNum('Latitude'), row.getNum('Longitude')))
-    var closest = closestStations[0];
-    var stationDistance = measureDistance(quakeLat, quakeLong, closest.getNum('Latitude'), closest.getNum('Longitude'))
-    // print(quake)
-    // print(closest)
-    // print(stationDistance)
+    // // use measureDistance function to find distance from quake to its nearest station
+    // // recorded these values into the daydata csv
+    // var quake = daydata.getRow(40);
+    // var quakeLat = quake.getNum('latitude')
+    // var quakeLong = quake.getNum('longitude')
+    // var closestStations = _.sortBy(station.rows, row => measureDistance(quakeLat, quakeLong, row.getNum('Latitude'), row.getNum('Longitude')))
+    // var closest = closestStations[0];
+    // var stationDistance = measureDistance(quakeLat, quakeLong, closest.getNum('Latitude'), closest.getNum('Longitude'))
+    // // print(quake)
+    // // print(closest)
+    // // print(stationDistance)
     
-    fill(0)
-    noStroke()
+    // fill(0)
+    // noStroke()
 }
 
 function draw() {
