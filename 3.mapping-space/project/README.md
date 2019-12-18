@@ -1,10 +1,16 @@
 # DVIA Earthquakes
 ## Fall 2019
 
+
+### See the video walkthrough of my final site:
+[![Final video walkthrough](assets/FinalVideo.png)](https://vimeo.com/380350492 "DVIA Earthquakes Final Video - Click to Watch!")
+
+
 For this visualization, I am tasked with creating a visualization that combines 
 data displayed on a map with data in a diagrammatical expression. I was most curious 
 about the relationship of recording stations to the earthquakes themselves, and 
 how that impacts the error readings in the data.
+
 
 ![View of Home Screen](assets/main.png "Home Screen")
 
@@ -21,6 +27,7 @@ locations and plotted those on the map as well. The user can interact by panning
 and selecting these points on the map to learn more about their locations or magnitude of the 
 events. 
 
+
 ![View of Map Quakes](assets/mapMag.png "Map Quake")
 
 ![View of Map Stations](assets/mapStation.png "Map Station")
@@ -31,6 +38,7 @@ element of information, the visual tools differ with color, position, and shape.
 magnitude, magnitude error, earthquake depth, depth error, and distance to the nearest station. 
 I made a legend to help the viewer understand these symbols. The diagram is ordered by station 
 distance, with the longest distance to a station on the far left and decreasing from there.
+
 
 ![View of Legend](assets/quakeLegend.png "Legend")
 ![View of Diagram](assets/diagram.png "Diagram")
